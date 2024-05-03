@@ -2058,7 +2058,7 @@
         "id": "custom-p-test",
         "fields": [
             {
-                "component": "fd:properties/abc",
+                "component": "fd:properties",
                 "name": "test",
                 "label": "Test",
                 "valueType": "string",

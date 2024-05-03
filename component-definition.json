@@ -267,7 +267,10 @@
                 "resourceType": "core/fd/components/form/image/v1/image",
                 "template": {
                   "jcr:title": "Image",
-                  "fieldType": "image"
+                  "fieldType": "image",
+                  "fd:properties": {
+                    "abc": "xyz"
+                  }
                 }
               }
             }
