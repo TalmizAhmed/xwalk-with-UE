@@ -2053,5 +2053,17 @@
                 "valueType": "boolean"
             }
         ]
+    },
+    {
+        "id": "custom-p-test",
+        "fields": [
+            {
+                "component": "fd:properties/abc",
+                "name": "test",
+                "label": "Test",
+                "valueType": "string",
+                "required": true
+            }
+        ]
     }
 ]
