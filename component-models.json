@@ -2058,11 +2058,10 @@
         "id": "custom-p-test",
         "fields": [
             {
-                "component": "fd:customProperty/abc",
-                "name": "test",
-                "label": "Test",
-                "valueType": "string",
-                "required": true
+                "component": "text",
+                "name": "fd:customProperty/abc",
+                "label": "Custom Prop Field",
+                "valueType": "string"
             },
             {
                 "component": "text",
