@@ -2058,11 +2058,17 @@
         "id": "custom-p-test",
         "fields": [
             {
-                "component": "dhsfasdhfkj",
+                "component": "fd:customProperty/abc",
                 "name": "test",
                 "label": "Test",
                 "valueType": "string",
                 "required": true
+            },
+            {
+                "component": "text",
+                "name": "jcr:title",
+                "label": "Label",
+                "valueType": "string"
             }
         ]
     }
