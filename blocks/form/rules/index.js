@@ -16,9 +16,18 @@ function compare(fieldVal, htmlVal, type) {
     return fieldVal === Number(htmlVal);
   }
   if (type === 'boolean') {
-    return fieldVal.toString() === htmlVal;
+    return fieldVal?.toString() === htmlVal;
   }
   return fieldVal === htmlVal;
+}
+
+function handleActiveChild(id, form) {
+  form.querySelectorAll('[data-active="true"]').forEach((ele) => ele.removeAttribute('data-active'));
+  const field = form.querySelector(`#${id}`);
+  if (field) {
+    field.closest('.field-wrapper').dataset.active = true;
+    field.focus();
+  }
 }
 
 async function fieldChanged(payload, form, generateFormRendition) {
@@ -26,6 +35,7 @@ async function fieldChanged(payload, form, generateFormRendition) {
   changes.forEach((change) => {
     const {
       id, fieldType, readOnly, type, displayValue, displayFormat, displayValueExpression,
+      activeChild,
     } = fieldModel;
     const { propertyName, currentValue, prevValue } = change;
     const field = form.querySelector(`#${id}`);
@@ -59,6 +69,8 @@ async function fieldChanged(payload, form, generateFormRendition) {
           });
         } else if (fieldType === 'checkbox') {
           field.checked = compare(currentValue, field.value, type);
+        } else if (fieldType === 'plain-text') {
+          field.innerHTML = currentValue;
         } else if (field.type !== 'file') {
           field.value = currentValue;
         }
@@ -136,6 +148,21 @@ async function fieldChanged(payload, form, generateFormRendition) {
           generateFormRendition({ items: [currentValue] }, field?.querySelector('.repeat-wrapper'));
         }
         break;
+      case 'activeChild': handleActiveChild(activeChild, form);
+        break;
+      default:
+        break;
+    }
+  });
+}
+
+function formChanged(payload, form) {
+  const { changes } = payload;
+  changes.forEach((change) => {
+    const { propertyName, currentValue } = change;
+    switch (propertyName) {
+      case 'activeChild': handleActiveChild(currentValue?.id, form);
+        break;
       default:
         break;
     }
@@ -146,6 +173,8 @@ function handleRuleEngineEvent(e, form, generateFormRendition) {
   const { type, payload } = e;
   if (type === 'fieldChanged') {
     fieldChanged(payload, form, generateFormRendition);
+  } else if (type === 'change') {
+    formChanged(payload, form);
   } else if (type === 'submitSuccess') {
     submitSuccess(e, form);
   } else if (type === 'submitFailure') {
@@ -176,6 +205,15 @@ function applyRuleEngine(htmlForm, form, captcha) {
     // console.log(JSON.stringify(form.exportData(), null, 2));
   });
 
+  htmlForm.addEventListener('focusin', (e) => {
+    const field = e.target;
+    let { id } = field;
+    if (['radio', 'checkbox'].includes(field?.type)) {
+      id = field.closest('.field-wrapper').dataset.id;
+    }
+    form.getElement(id)?.focus();
+  });
+
   htmlForm.addEventListener('click', async (e) => {
     if (e.target.tagName === 'BUTTON') {
       const element = form.getElement(e.target.id);
@@ -198,6 +236,10 @@ export async function loadRuleEngine(formDef, htmlForm, captcha, genFormRenditio
   form.subscribe((e) => {
     handleRuleEngineEvent(e, htmlForm, genFormRendition);
   }, 'fieldChanged');
+
+  form.subscribe((e) => {
+    handleRuleEngineEvent(e, htmlForm, genFormRendition);
+  }, 'change');
 
   form.subscribe((e) => {
     handleRuleEngineEvent(e, htmlForm);
