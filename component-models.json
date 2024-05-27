@@ -662,8 +662,9 @@
                     {
                         "component": "text",
                         "name": "fd:customProperty/abc",
-                        "label": "Custom Prop Field",
-                        "valueType": "string"
+                        "label": "Custom field new one",
+                        "valueType": "string",
+                        "placeholder": "Enter value"
                     },
                     {
                         "component": "text",
