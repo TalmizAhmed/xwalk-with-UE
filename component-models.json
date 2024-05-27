@@ -662,8 +662,8 @@
                     {
                         "component": "text",
                         "name": "fd:customProperty/abc",
-                        "label": "Custom field new one",
-                        "valueType": "string",
+                        "label": "Custom field new number 2",
+                        "valueType": "number",
                         "placeholder": "Enter value"
                     },
                     {
