@@ -2215,5 +2215,17 @@
                 ]
             }
         ]
+    },
+    {
+        "id": "form-embed",
+        "fields": [
+            {
+                "component": "text",
+                "valueType": "string",
+                "name": "formPath",
+                "value": "",
+                "label": "Form Path"
+            }
+        ]
     }
 ]
