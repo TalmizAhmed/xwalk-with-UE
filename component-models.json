@@ -714,7 +714,7 @@
                         "component": "text",
                         "name": "default",
                         "label": "Default Value",
-                        "valueType": "string"
+                        "valueType": "number"
                     },
                     {
                         "component": "boolean",
