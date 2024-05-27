@@ -28,7 +28,8 @@
       "hero",
       "cards",
       "columns",
-      "form"
+      "form",
+      "form-embed"
     ]
   },
   {
@@ -51,8 +52,7 @@
       "email",
       "fragment",
       "form-button",
-      "form-image",
-      "form-embed"
+      "form-image"
     ]
   }
 ]
