@@ -490,10 +490,11 @@
                         "valueType": "boolean"
                     },
                     {
-                        "component": "text",
+                        "component": "date-time",
                         "name": "default",
                         "label": "Default Value",
-                        "valueType": "string"
+                        "valueType": "date",
+                        "placeholder": "test-mm-dd"
                     },
                     {
                         "component": "boolean",
