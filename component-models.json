@@ -455,7 +455,8 @@
                         "component": "text",
                         "name": "jcr:title",
                         "label": "Label",
-                        "valueType": "string"
+                        "valueType": "string",
+                        "placeholder": "plc-holder"
                     },
                     {
                         "component": "text",
@@ -493,8 +494,7 @@
                         "component": "date-time",
                         "name": "default",
                         "label": "Default Value",
-                        "valueType": "date",
-                        "placeholder": "test-mm-dd"
+                        "valueType": "date"
                     },
                     {
                         "component": "boolean",
