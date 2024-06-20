@@ -1582,8 +1582,14 @@
                     {
                         "component": "text",
                         "name": "jcr:title",
-                        "label": "Label",
+                        "label": "Title",
                         "valueType": "string"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "hideTitle",
+                        "label": "Hide title",
+                        "valueType": "boolean"
                     },
                     {
                         "component": "text",
@@ -1648,8 +1654,14 @@
             {
                 "component": "text",
                 "name": "jcr:title",
-                "label": "Label",
+                "label": "Title",
                 "valueType": "string"
+            },
+            {
+                "component": "boolean",
+                "name": "hideTitle",
+                "label": "Hide title",
+                "valueType": "boolean"
             },
             {
                 "component": "reference",
