@@ -569,6 +569,12 @@
                         "valueType": "boolean"
                     },
                     {
+                        "component": "boolean",
+                        "name": "allowFractionalRating",
+                        "label": "Allow Fractional Rating",
+                        "valueType": "boolean"
+                    },
+                    {
                         "component": "number",
                         "name": "default",
                         "label": "Default Value",
