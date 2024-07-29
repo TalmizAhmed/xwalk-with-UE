@@ -35,7 +35,7 @@ const constraintsDef = Object.entries({
   file: ['accept', 'Multiple'],
   panel: [['maxOccur', 'data-max'], ['minOccur', 'data-min']],
 }).flatMap(([types, constraintDef]) => types.split('|')
-  .map((type) => [type, constraintDef.map((cd) => (Array.isArray(cd) ? cd : [cd, cd]))]));
+    .map((type) => [type, constraintDef.map((cd) => (Array.isArray(cd) ? cd : [cd, cd]))]));
 
 const constraintsObject = Object.fromEntries(constraintsDef);
 
@@ -44,10 +44,10 @@ function setConstraints(element, fd) {
   const constraints = constraintsObject[renderType];
   if (constraints) {
     constraints
-      .filter(([nm]) => fd[nm])
-      .forEach(([nm, htmlNm]) => {
-        element.setAttribute(htmlNm, fd[nm]);
-      });
+        .filter(([nm]) => fd[nm])
+        .forEach(([nm, htmlNm]) => {
+          element.setAttribute(htmlNm, fd[nm]);
+        });
   }
 }
 
@@ -97,20 +97,20 @@ const createSelect = withFieldWrapper((fd) => {
   const optionNames = fd?.enumNames ?? options;
 
   if (options.length === 1
-    && options?.[0]?.startsWith('https://')) {
+      && options?.[0]?.startsWith('https://')) {
     const optionsUrl = new URL(options?.[0]);
     // using async to avoid rendering
     if (optionsUrl.hostname.endsWith('hlx.page')
-    || optionsUrl.hostname.endsWith('hlx.live')) {
+        || optionsUrl.hostname.endsWith('hlx.live')) {
       fetch(`${optionsUrl.pathname}${optionsUrl.search}`)
-        .then(async (response) => {
-          const json = await response.json();
-          const values = [];
-          json.data.forEach((opt) => {
-            addOption(opt.Option, opt.Value);
-            values.push(opt.Value || opt.Option);
+          .then(async (response) => {
+            const json = await response.json();
+            const values = [];
+            json.data.forEach((opt) => {
+              addOption(opt.Option, opt.Value);
+              values.push(opt.Value || opt.Option);
+            });
           });
-        });
     }
   } else {
     options.forEach((value, index) => addOption(optionNames?.[index], value));
@@ -474,12 +474,18 @@ function extractFormDefinition(block) {
 export async function fetchForm(pathname) {
   // get the main form
   let data;
-  let resp = await fetch(pathname);
+  let path = pathname;
+  if (path.startsWith(window.location.origin)) {
+    if (path.endsWith('.html')) {
+      path = path.substring(0, path.lastIndexOf('.html'));
+    }
+    path += '/jcr:content/root/section/form.html';
+  }
+  let resp = await fetch(path);
 
   if (resp?.headers?.get('Content-Type')?.includes('application/json')) {
     data = await resp.json();
   } else if (resp?.headers?.get('Content-Type')?.includes('text/html')) {
-    const path = pathname.replace('.html', '.md.html');
     resp = await fetch(path);
     data = await resp.text().then((html) => {
       try {
@@ -489,7 +495,7 @@ export async function fetchForm(pathname) {
         }
         return doc;
       } catch (e) {
-        console.error('Unable to fetch form definition for path', pathname);
+        console.error('Unable to fetch form definition for path', pathname, path);
         return null;
       }
     });
