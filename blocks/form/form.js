@@ -7,9 +7,9 @@ import {
   toClassName,
 } from './util.js';
 import GoogleReCaptcha from './integrations/recaptcha.js';
-import componentDecorater from './mappings.js';
+import componentDecorator from './mappings.js';
 import DocBasedFormToAF from './transform.js';
-import transferRepeatableDOM from './components/repeat.js';
+import transferRepeatableDOM from './components/repeat/repeat.js';
 import { handleSubmit } from './submit.js';
 import { getSubmitBaseUrl, emailPattern } from './constant.js';
 
@@ -35,7 +35,7 @@ const constraintsDef = Object.entries({
   file: ['accept', 'Multiple'],
   panel: [['maxOccur', 'data-max'], ['minOccur', 'data-min']],
 }).flatMap(([types, constraintDef]) => types.split('|')
-    .map((type) => [type, constraintDef.map((cd) => (Array.isArray(cd) ? cd : [cd, cd]))]));
+  .map((type) => [type, constraintDef.map((cd) => (Array.isArray(cd) ? cd : [cd, cd]))]));
 
 const constraintsObject = Object.fromEntries(constraintsDef);
 
@@ -44,10 +44,10 @@ function setConstraints(element, fd) {
   const constraints = constraintsObject[renderType];
   if (constraints) {
     constraints
-        .filter(([nm]) => fd[nm])
-        .forEach(([nm, htmlNm]) => {
-          element.setAttribute(htmlNm, fd[nm]);
-        });
+      .filter(([nm]) => fd[nm])
+      .forEach(([nm, htmlNm]) => {
+        element.setAttribute(htmlNm, fd[nm]);
+      });
   }
 }
 
@@ -97,20 +97,20 @@ const createSelect = withFieldWrapper((fd) => {
   const optionNames = fd?.enumNames ?? options;
 
   if (options.length === 1
-      && options?.[0]?.startsWith('https://')) {
+    && options?.[0]?.startsWith('https://')) {
     const optionsUrl = new URL(options?.[0]);
     // using async to avoid rendering
     if (optionsUrl.hostname.endsWith('hlx.page')
-        || optionsUrl.hostname.endsWith('hlx.live')) {
+    || optionsUrl.hostname.endsWith('hlx.live')) {
       fetch(`${optionsUrl.pathname}${optionsUrl.search}`)
-          .then(async (response) => {
-            const json = await response.json();
-            const values = [];
-            json.data.forEach((opt) => {
-              addOption(opt.Option, opt.Value);
-              values.push(opt.Value || opt.Option);
-            });
+        .then(async (response) => {
+          const json = await response.json();
+          const values = [];
+          json.data.forEach((opt) => {
+            addOption(opt.Option, opt.Value);
+            values.push(opt.Value || opt.Option);
           });
+        });
     }
   } else {
     options.forEach((value, index) => addOption(optionNames?.[index], value));
@@ -355,14 +355,11 @@ export async function generateFormRendition(panel, container, getItems = (p) => 
         element.className += ` ${field.appliedCssClassNames}`;
       }
       colSpanDecorator(field, element);
-      const decorator = await componentDecorater(field);
       if (field?.fieldType === 'panel') {
         await generateFormRendition(field, element, getItems);
         return element;
       }
-      if (typeof decorator === 'function') {
-        return decorator(element, field, container);
-      }
+      await componentDecorator(element, field, container);
       return element;
     }
     return null;
@@ -370,11 +367,7 @@ export async function generateFormRendition(panel, container, getItems = (p) => 
 
   const children = await Promise.all(promises);
   container.append(...children.filter((_) => _ != null));
-  const decorator = await componentDecorater(panel);
-  if (typeof decorator === 'function') {
-    return decorator(container, panel);
-  }
-  return container;
+  await componentDecorator(container, panel);
 }
 
 function enableValidation(form) {
