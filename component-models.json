@@ -399,8 +399,8 @@
                     },
                     {
                         "component": "number",
-                        "name": "minimum",
-                        "label": "Minimum Value",
+                        "name": "minLength",
+                        "label": "Minimum number of characters",
                         "valueType": "number",
                         "description": "Minimum length of the text in the field"
                     },
@@ -413,8 +413,8 @@
                     },
                     {
                         "component": "number",
-                        "name": "maximum",
-                        "label": "Maximum Value",
+                        "name": "maxLength",
+                        "label": "Maximum number of characters",
                         "valueType": "number",
                         "description": "Maximum length of the text in the field"
                     },
