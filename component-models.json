@@ -196,28 +196,15 @@
                 "label": "Submit Action",
                 "options": [
                     {
-                        "name": "Submit to Workfront Fusion",
-                        "value": "fd/workfrontfusion/components/actions/wfsubmit"
-                    },
-                    {
                         "name": "Submit to REST endpoint",
                         "value": "fd/af/components/guidesubmittype/restendpoint"
+                    },
+                    {
+                        "name": "Send email",
+                        "value": "fd/af/components/guidesubmittype/email"
                     }
                 ],
                 "value" : ""
-            },
-            {
-                "component": "select",
-                "name": "callbackId",
-                "label": "Fusion Scenario",
-                "valueType": "string",
-                "condition": { "==": [{ "var": "actionType" }, "fd/workfrontfusion/components/actions/wfsubmit"] },
-                "options": [
-                    {
-                        "name": "HDFC Sign Scenario",
-                        "value": "8366d120-80b1-4ad2-9f2b-743aa38b2a00"
-                    }
-                ]
             },
             {
                 "component": "text",
@@ -227,14 +214,71 @@
                 "condition": { "==": [{ "var": "actionType" }, "fd/af/components/guidesubmittype/restendpoint"] }
             },
             {
-                "component": "select",
-                "name": "dorType",
-                "label": "Document of Record",
-                "valueType": "string",
-                "options": [
+                "component": "container",
+                "name": "email",
+                "label": "Email Configuration",
+                "collapsible": false,
+                "condition": { "==": [{ "var": "actionType" }, "fd/af/components/guidesubmittype/email"] },
+                "fields": [
                     {
-                        "name": "Generate Auto DoR",
-                        "value": "generate"
+                        "component": "text",
+                        "name": "from",
+                        "label": "From",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "text",
+                        "name": "mailto",
+                        "label": "To",
+                        "valueType": "string",
+                        "multi": true,
+                        "required": true
+                    },
+                    {
+                        "component": "text",
+                        "name": "cc",
+                        "label": "CC",
+                        "valueType": "string",
+                        "multi": true
+                    },
+                    {
+                        "component": "text",
+                        "name": "bcc",
+                        "label": "BCC",
+                        "valueType": "string",
+                        "multi": true
+                    },
+                    {
+                        "component": "text",
+                        "name": "subject",
+                        "label": "Subject",
+                        "valueType": "string"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "useExternalEmailTemplate",
+                        "label": "Use external template",
+                        "valueType": "boolean"
+                    },
+                    {
+                        "component": "aem-content",
+                        "name": "templatePath",
+                        "label": "External template path",
+                        "valueType": "string",
+                        "condition": { "==": [{ "var": "useExternalEmailTemplate" }, true] }
+                    },
+                    {
+                        "component": "richtext",
+                        "name": "template",
+                        "label": "Email template",
+                        "valueType": "string",
+                        "condition": { "!=": [{ "var": "useExternalEmailTemplate" }, true] }
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "includeAttachments",
+                        "label": "Include attachments",
+                        "valueType": "boolean"
                     }
                 ]
             }
@@ -347,6 +391,13 @@
                         "valueType": "boolean"
                     },
                     {
+                        "component": "text",
+                        "name": "mandatoryMessage",
+                        "label": "Error message",
+                        "valueType": "string",
+                        "description": "Error message shown when required field is left empty."
+                    },
+                    {
                         "component": "number",
                         "name": "minimum",
                         "label": "Minimum Value",
@@ -354,11 +405,46 @@
                         "description": "Minimum length of the text in the field"
                     },
                     {
+                        "component": "text",
+                        "name": "minLengthMessage",
+                        "valueType": "string",
+                        "label": "Minimum characters error message",
+                        "description": "Error message shown when less than minimum characters are entered."
+                    },
+                    {
                         "component": "number",
                         "name": "maximum",
                         "label": "Maximum Value",
                         "valueType": "number",
                         "description": "Maximum length of the text in the field"
+                    },
+                    {
+                        "component": "text",
+                        "name": "maxLengthMessage",
+                        "valueType": "string",
+                        "label": "Maximum characters error message",
+                        "description": "Error message shown when more than maximum characters are entered."
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
+                    },
+                    {
+                        "component": "text",
+                        "name": "pattern",
+                        "valueType": "string",
+                        "label": "Pattern",
+                        "description": "Regular Expression is permitted."
+                    },
+                    {
+                        "component": "text",
+                        "name": "validatePictureClauseMessage",
+                        "valueType": "string",
+                        "label": "Pattern Error message",
+                        "description": "Error message shown when the pattern is not matched."
                     }
                 ]
             }
@@ -471,18 +557,62 @@
                         "valueType": "boolean"
                     },
                     {
-                        "component": "number",
-                        "name": "minimum",
-                        "label": "Minimum Value",
-                        "valueType": "number",
-                        "description": "Minimum length of the text in the field"
+                        "component": "text",
+                        "name": "mandatoryMessage",
+                        "label": "Error message",
+                        "valueType": "string",
+                        "description": "Error message shown when required field is left empty."
                     },
                     {
-                        "component": "number",
-                        "name": "maximum",
-                        "label": "Maximum Value",
-                        "valueType": "number",
-                        "description": "Maximum length of the text in the field"
+                        "component": "date-time",
+                        "name": "minimumDate",
+                        "label": "Minimum date",
+                        "valueType": "date",
+                        "description": "Minimum date allowed in the field",
+                        "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "excludeMinimum",
+                        "label": "Exclude minimum date",
+                        "valueType": "boolean",
+                        "description": "Exclude the minimum date from the validation."
+                    },
+                    {
+                        "component": "text",
+                        "name": "minimumMessage",
+                        "valueType": "string",
+                        "label": "Minimum error message",
+                        "description": "Error message shown when the date entered is before the minimum date."
+                    },
+                    {
+                        "component": "date-time",
+                        "name": "maximumDate",
+                        "label": "Maximum date",
+                        "valueType": "date",
+                        "description": "Maximum date allowed in the field",
+                        "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "excludeMaximum",
+                        "label": "Exclude maximum date",
+                        "valueType": "boolean",
+                        "description": "Exclude the maximum date from the validation."
+                    },
+                    {
+                        "component": "text",
+                        "name": "maximumMessage",
+                        "valueType": "string",
+                        "label": "Maximum error message",
+                        "description": "Error message shown when the date entered is after the maximum date."
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     }
                 ]
             },
@@ -569,12 +699,6 @@
                         "valueType": "boolean"
                     },
                     {
-                        "component": "boolean",
-                        "name": "allowFractionalRating",
-                        "label": "Allow Fractional Rating",
-                        "valueType": "boolean"
-                    },
-                    {
                         "component": "number",
                         "name": "default",
                         "label": "Default Value",
@@ -621,18 +745,60 @@
                         "valueType": "boolean"
                     },
                     {
+                        "component": "text",
+                        "name": "mandatoryMessage",
+                        "label": "Error message",
+                        "valueType": "string",
+                        "description": "Error message shown when required field is left empty."
+                    },
+                    {
                         "component": "number",
                         "name": "minimum",
-                        "label": "Minimum Value",
+                        "label": "Lowest number / Smallest number",
                         "valueType": "number",
-                        "description": "Minimum length of the text in the field"
+                        "description": "Minimum number allowed in the field"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "excludeMinimum",
+                        "label": "Exclude minimum value",
+                        "valueType": "boolean",
+                        "description": "Exclude the minimum number from the validation."
+                    },
+                    {
+                        "component": "text",
+                        "name": "minimumMessage",
+                        "valueType": "string",
+                        "label": "Minimum error message",
+                        "description": "Error message shown when entered value is less than minimum."
                     },
                     {
                         "component": "number",
                         "name": "maximum",
-                        "label": "Maximum Value",
+                        "label": "Highest number / Largest number",
                         "valueType": "number",
-                        "description": "Maximum length of the text in the field"
+                        "description": "Maximum number allowed in the field"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "excludeMaximum",
+                        "label": "Exclude maximum value",
+                        "valueType": "boolean",
+                        "description": "Exclude the maximum number from the validation."
+                    },
+                    {
+                        "component": "text",
+                        "name": "maximumMessage",
+                        "valueType": "string",
+                        "label": "Maximum error message",
+                        "description": "Error message shown when the entered value is more than maximum."
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     }
                 ]
             }
@@ -736,7 +902,15 @@
                         "component": "text",
                         "name": "mandatoryMessage",
                         "label": "Error message",
-                        "valueType": "string"
+                        "valueType": "string",
+                        "description": "Error message shown when required field is left empty."
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     },
                     {
                         "component": "number",
@@ -1109,6 +1283,13 @@
                         "label": "Error Message",
                         "valueType": "string",
                         "description": "Error message shown when required field is left empty"
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     }
                 ]
             },
@@ -1260,6 +1441,13 @@
                         "label": "Error Message",
                         "valueType": "string",
                         "description": "Error message shown when required field is left empty"
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     }
                 ]
             }
@@ -1421,6 +1609,13 @@
                         "label": "Error Message",
                         "valueType": "string",
                         "description": "Error message shown when required field is left empty"
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     }
                 ]
             }
@@ -1552,6 +1747,13 @@
                         "valueType": "boolean"
                     },
                     {
+                        "component": "text",
+                        "name": "mandatoryMessage",
+                        "label": "Error message",
+                        "valueType": "string",
+                        "description": "Error message shown when required field is left empty."
+                    },
+                    {
                         "component": "number",
                         "name": "minLength",
                         "label": "Minimum Number of characters",
@@ -1559,11 +1761,32 @@
                         "description": "Minimum Number of characters"
                     },
                     {
+                        "component": "text",
+                        "name": "minLengthMessage",
+                        "valueType": "string",
+                        "label": "Minimum error message",
+                        "description": "Error message shown when entered value has less characters than the minimum."
+                    },
+                    {
                         "component": "number",
                         "name": "maxLength",
                         "label": "Maximum Number of characters",
                         "valueType": "number",
                         "description": "Maximum Number of characters"
+                    },
+                    {
+                        "component": "text",
+                        "name": "maxLengthMessage",
+                        "valueType": "string",
+                        "label": "Maximum error message",
+                        "description": "Error message shown when entered value has more characters than the maximum."
+                    },
+                    {
+                        "component": "text",
+                        "name": "validateExpMessage",
+                        "label": "Script validation message",
+                        "valueType": "string",
+                        "description": "Displayed when validation script fails."
                     }
                 ]
             }
