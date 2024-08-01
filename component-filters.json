@@ -52,7 +52,8 @@
       "email",
       "fragment",
       "form-button",
-      "form-image"
+      "form-image",
+      "checkbox-group"
     ]
   }
 ]
