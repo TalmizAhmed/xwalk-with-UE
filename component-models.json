@@ -592,18 +592,31 @@
                         "description": "Error message shown when more than maximum characters are entered."
                     },
                     {
-                        "component": "text",
-                        "name": "validateExpMessage",
-                        "label": "Script validation message",
+                        "component": "select",
+                        "name": "validationPatternType",
+                        "label": "Validation Pattern Type",
                         "valueType": "string",
-                        "description": "Displayed when validation script fails."
+                        "description": "Preset values of validation patterns",
+                        "options": [
+                            { "name": "International", "value": "^[+][0-9]{0,14}$" },
+                            { "name": "US Phone Number", "value": "^[+]1[0-9]{0,10}$" },
+                            { "name": "UK Phone Number", "value": "^[+]44[0-9]{0,10}$" },
+                            { "name": "Custom", "value": "" }
+                        ]
                     },
                     {
                         "component": "text",
-                        "name": "validationPatternType",
+                        "name": "pattern",
                         "valueType": "string",
                         "label": "Pattern",
-                        "description": "Regular Expression is permitted."
+                        "description": "Regular Expression is permitted.",
+                        "condition": {
+                            "if": [
+                                { "===": [{"var" : "validationPatternType"}, "Custom"] },
+                                { "var": "pattern" },
+                                { "var": "validationPatternType" }
+                            ]
+                        }
                     },
                     {
                         "component": "text",
