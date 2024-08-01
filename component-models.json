@@ -609,14 +609,7 @@
                         "name": "pattern",
                         "valueType": "string",
                         "label": "Validation Pattern",
-                        "description": "Regular Expression is permitted.",
-                        "condition": {
-                            "if": [
-                                { "===": [{"var" : "validationPatternType"}, "Custom"] },
-                                { "var": "pattern" },
-                                { "var": "validationPatternType" }
-                            ]
-                        }
+                        "description": "Regular Expression is permitted."
                     },
                     {
                         "component": "text",
