@@ -41,20 +41,24 @@
   {
     "id": "form",
     "components": [
-      "plain-text",
-      "text-input",
-      "number-input",
-      "date-input",
-      "panel",
       "checkbox",
-      "drop-down",
-      "radio-group",
-      "email",
-      "fragment",
-      "form-button",
-      "form-image",
       "checkbox-group",
-      "telephone-input"
+      "date-input",
+      "drop-down",
+      "email",
+      "file-input",
+      "form-button",
+      "form-fragment",
+      "form-image",
+      "form-reset-button",
+      "form-submit-button",
+      "number-input",
+      "panel",
+      "plain-text",
+      "radio-group",
+      "telephone-input",
+      "text-input",
+      "wizard"
     ]
   }
 ]
