@@ -191,6 +191,25 @@
         "fields": [
             {
                 "component": "select",
+                "name": "thankYouOption",
+                "label": "On Submit",
+                "valueType": "string",
+                "options": [
+                    {
+                        "name": "Show message",
+                        "value": "message"
+                    }
+                ]
+            },
+            {
+                "component": "richtext",
+                "name": "thankYouMessage",
+                "label": "Message Content",
+                "valueType": "string",
+                "condition": { "==": [{ "var": "thankYouOption" }, "message"] }
+            },
+            {
+                "component": "select",
                 "valueType": "string",
                 "name": "actionType",
                 "label": "Submit Action",
@@ -205,6 +224,13 @@
                     }
                 ],
                 "value" : ""
+            },
+            {
+                "component": "boolean",
+                "name": "enableRestEndpointPost",
+                "label": "Enable POST request",
+                "valueType": "string",
+                "condition": { "==": [{ "var": "actionType" }, "fd/af/components/guidesubmittype/restendpoint"] }
             },
             {
                 "component": "text",
@@ -572,13 +598,6 @@
                         "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
                     },
                     {
-                        "component": "boolean",
-                        "name": "excludeMinimum",
-                        "label": "Exclude minimum date",
-                        "valueType": "boolean",
-                        "description": "Exclude the minimum date from the validation."
-                    },
-                    {
                         "component": "text",
                         "name": "minimumMessage",
                         "valueType": "string",
@@ -592,13 +611,6 @@
                         "valueType": "date",
                         "description": "Maximum date allowed in the field",
                         "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
-                    },
-                    {
-                        "component": "boolean",
-                        "name": "excludeMaximum",
-                        "label": "Exclude maximum date",
-                        "valueType": "boolean",
-                        "description": "Exclude the maximum date from the validation."
                     },
                     {
                         "component": "text",
@@ -631,6 +643,22 @@
                             {
                                 "name": "01 April, 2007",
                                 "value": "d MMMM, y"
+                            },
+                            {
+                                "name": "April 01, 2007",
+                                "value": "MMMM d, y"
+                            },
+                            {
+                                "name": "Sunday, 01 April, 2007",
+                                "value": "EEEE, d MMMM, y"
+                            },
+                            {
+                                "name": "Sunday, April 01, 2007",
+                                "value": "EEEE, MMMM d, y"
+                            },
+                            {
+                                "name": "1/4/2007",
+                                "value": "d/M/y"
                             }
                         ]
                     }
@@ -759,13 +787,6 @@
                         "description": "Minimum number allowed in the field"
                     },
                     {
-                        "component": "boolean",
-                        "name": "excludeMinimum",
-                        "label": "Exclude minimum value",
-                        "valueType": "boolean",
-                        "description": "Exclude the minimum number from the validation."
-                    },
-                    {
                         "component": "text",
                         "name": "minimumMessage",
                         "valueType": "string",
@@ -778,13 +799,6 @@
                         "label": "Highest number / Largest number",
                         "valueType": "number",
                         "description": "Maximum number allowed in the field"
-                    },
-                    {
-                        "component": "boolean",
-                        "name": "excludeMaximum",
-                        "label": "Exclude maximum value",
-                        "valueType": "boolean",
-                        "description": "Exclude the maximum number from the validation."
                     },
                     {
                         "component": "text",
