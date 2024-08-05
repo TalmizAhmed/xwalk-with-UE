@@ -58,7 +58,8 @@
       "radio-group",
       "telephone-input",
       "text-input",
-      "wizard"
+      "wizard",
+      "tnc"
     ]
   }
 ]
