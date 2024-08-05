@@ -422,11 +422,13 @@
                   "visible": true,
                   "tncText": {
                     "value": "By clicking the button, you agree to the Terms and Conditions.",
-                    "resourceType": "core/fd/components/form/text/v1/text"
+                    "resourceType": "core/fd/components/form/text/v1/text",
+                    "fieldType": "plain-text"
                   },
                   "tncCheckBox": {
                     "value": "I agree to the Terms and Conditions.",
-                    "resourceType": "core/fd/components/form/checkbox/v1/checkbox"
+                    "resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                    "fieldType": "checkbox"
                   }
                 }
               }
