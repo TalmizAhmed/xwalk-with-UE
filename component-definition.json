@@ -406,6 +406,32 @@
               }
             }
           }
+        },
+        {
+          "title": "Terms and conditions",
+          "id": "tnc",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "template": {
+                  "jcr:title": "Terms and conditions",
+                  "fieldType": "panel",
+                  "fd:viewType": "tnc",
+                  "enabled": true,
+                  "visible": true,
+                  "tncText": {
+                    "value": "By clicking the button, you agree to the Terms and Conditions.",
+                    "resourceType": "core/fd/components/form/text/v1/text"
+                  },
+                  "tncCheckBox": {
+                    "value": "I agree to the Terms and Conditions.",
+                    "resourceType": "core/fd/components/form/checkbox/v1/checkbox"
+                  }
+                }
+              }
+            }
+          }
         }
       ]
     },
