@@ -420,15 +420,16 @@
                   "fd:viewType": "tnc",
                   "enabled": true,
                   "visible": true,
-                  "tncText": {
-                    "value": "By clicking the button, you agree to the Terms and Conditions.",
+                  "text": {
+                    "value": "Text related to the terms and conditions come here.",
                     "resourceType": "core/fd/components/form/text/v1/text",
                     "fieldType": "plain-text"
                   },
-                  "tncCheckBox": {
-                    "value": "I agree to the Terms and Conditions.",
+                  "approvalcheckbox": {
+                    "jcr:title": "I agree to the terms & conditions.",
                     "resourceType": "core/fd/components/form/checkbox/v1/checkbox",
-                    "fieldType": "checkbox"
+                    "fieldType": "checkbox",
+                    "checkedValue": "true"
                   }
                 }
               }
