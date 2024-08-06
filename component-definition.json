@@ -421,13 +421,14 @@
                   "enabled": true,
                   "visible": true,
                   "text": {
+                    "jcr:title": "",
                     "value": "Text related to the terms and conditions come here.",
-                    "resourceType": "core/fd/components/form/text/v1/text",
+                    "sling:resourceType": "core/fd/components/form/text/v1/text",
                     "fieldType": "plain-text"
                   },
                   "approvalcheckbox": {
                     "jcr:title": "I agree to the terms & conditions.",
-                    "resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                    "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
                     "fieldType": "checkbox",
                     "checkedValue": "true"
                   }
