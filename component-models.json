@@ -1113,8 +1113,7 @@
                         "component": "boolean",
                         "name": "showLink",
                         "label": "Replace consent text with weblink(s)",
-                        "valueType": "boolean",
-                        "description": "If checked, the consent text will be replaced with a hyperlink."
+                        "valueType": "boolean"
                     }
                 ]
             }
