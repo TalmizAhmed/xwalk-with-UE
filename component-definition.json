@@ -413,7 +413,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/fd/components/form/panelcontainer/v1/panelcontainer",
+                "resourceType": "core/fd/components/form/termsandconditions/v1/termsandconditions",
                 "template": {
                   "jcr:title": "Terms and conditions",
                   "fieldType": "panel",
@@ -426,18 +426,11 @@
                     "sling:resourceType": "core/fd/components/form/text/v1/text",
                     "fieldType": "plain-text"
                   },
-                  "approvalcheckbox": {
-                    "jcr:title": "I agree to the terms & conditions.",
-                    "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
-                    "fieldType": "checkbox",
-                    "checkedValue": "true",
-                    "enabled": "false",
-                    "required": "true"
-                  },
                   "link": {
                     "jcr:title": "",
                     "enum": "your-link-here",
                     "type": "string[]",
+                    "visible": "false",
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
                       "label for the link"
@@ -454,6 +447,13 @@
                         "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
                       ]
                     }
+                  },
+                  "approvalcheckbox": {
+                    "jcr:title": "I agree to the terms & conditions.",
+                    "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
+                    "fieldType": "checkbox",
+                    "checkedValue": "true",
+                    "required": "true"
                   }
                 }
               }
