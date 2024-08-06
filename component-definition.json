@@ -441,7 +441,17 @@
                       "label for the link"
                     ],
                     "sling:resourceType": "core/fd/components/form/toggleablelink/v1/toggleablelink",
-                    "fieldType": "checkbox-group"
+                    "fieldType": "checkbox-group",
+                    "fd:rules": {
+                      "jcr:primaryType": "nt:unstructured",
+                      "validationStatus": "valid"
+                    },
+                    "fd:events": {
+                      "jcr:primaryType": "nt:unstructured",
+                      "change": [
+                        "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
+                      ]
+                    }
                   }
                 }
               }
