@@ -431,6 +431,25 @@
                     "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
                     "fieldType": "checkbox",
                     "checkedValue": "true"
+                  },
+                  "link": {
+                    "jcr:title": "",
+                    "enum": "your-link-here",
+                    "type": "string[]",
+                    "title": "I agree to the terms & conditions",
+                    "enumNames": [
+                      "label for the link"
+                    ],
+                    "sling:resourceType": "core/fd/components/form/toggleablelink/v1/toggleablelink",
+                    "fieldType": "checkbox-group",
+                    "fd:rules": {
+                      "validationStatus": "valid"
+                    },
+                    "fd:events": {
+                      "change": [
+                        "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
+                      ]
+                    }
                   }
                 }
               }
