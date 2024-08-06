@@ -1046,6 +1046,18 @@
                         "name": "readOnly",
                         "label": "Read-only",
                         "valueType": "boolean"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "showApprovalOption",
+                        "label": "Show approval options",
+                        "valueType": "boolean"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "showLink",
+                        "label": "Replace consent text with weblink(s)",
+                        "valueType": "boolean"
                     }
                 ]
             },
@@ -1094,26 +1106,6 @@
                         "name": "tooltip",
                         "label": "Short description",
                         "valueType": "string"
-                    }
-                ]
-            },
-            {
-                "component": "container",
-                "name": "tnc",
-                "label": "Terms and conditions",
-                "collapsible": true,
-                "fields": [
-                    {
-                        "component": "boolean",
-                        "name": "showApprovalOption",
-                        "label": "Show approval options",
-                        "valueType": "boolean"
-                    },
-                    {
-                        "component": "boolean",
-                        "name": "showLink",
-                        "label": "Replace consent text with weblink(s)",
-                        "valueType": "boolean"
                     }
                 ]
             }
