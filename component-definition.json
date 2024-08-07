@@ -430,8 +430,8 @@
                     "jcr:title": "",
                     "enum": "your-link-here",
                     "type": "string[]",
-                    "enabled": "true",
-                    "visible": "true",
+                    "enabled": true,
+                    "visible": true,
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
                       "label for the link"
@@ -454,8 +454,8 @@
                     "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
                     "fieldType": "checkbox",
                     "checkedValue": "true",
-                    "required": "true",
-                    "enabled": "false"
+                    "required": true,
+                    "enabled": false
                   }
                 }
               }
