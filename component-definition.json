@@ -431,7 +431,7 @@
                     "enum": "your-link-here",
                     "type": "string[]",
                     "enabled": "true",
-                    "visible": "false",
+                    "visible": "true",
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
                       "label for the link"
