@@ -428,7 +428,7 @@
                   },
                   "link": {
                     "jcr:title": "",
-                    "enum": "your-link-here",
+                    "enum": ["your-link-here"],
                     "type": "string[]",
                     "enabled": true,
                     "visible": true,
