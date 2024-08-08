@@ -436,7 +436,7 @@
                     "enumNames": [
                       "label for the link"
                     ],
-                    "sling:resourceType": "core/fd/components/form/toggleablelink/v1/toggleablelink",
+                    "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
                     "fieldType": "checkbox-group",
                     "fd:rules": {
                       "jcr:primaryType": "nt:unstructured",
