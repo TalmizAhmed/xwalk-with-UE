@@ -11,7 +11,6 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
 async function applyChanges(event) {
-
   // redecorate default content and blocks on patches (in the properties rail)
   const { detail } = event;
 
@@ -47,18 +46,18 @@ async function applyChanges(event) {
       const blockResource = block.getAttribute('data-aue-resource');
       const newBlock = parsedUpdate.querySelector(`[data-aue-resource="${blockResource}"]`);
       if (block.dataset.aueModel === 'form') {
-          return true;
+        return true;
       } else if (newBlock) {
-          newBlock.style.display = 'none';
-          block.insertAdjacentElement('afterend', newBlock);
-          decorateButtons(newBlock);
-          decorateIcons(newBlock);
-          decorateBlock(newBlock);
-          decorateRichtext(newBlock);
-          await loadBlock(newBlock);
-          block.remove();
-          newBlock.style.display = null;
-          return true;
+        newBlock.style.display = 'none';
+        block.insertAdjacentElement('afterend', newBlock);
+        decorateButtons(newBlock);
+        decorateIcons(newBlock);
+        decorateBlock(newBlock);
+        decorateRichtext(newBlock);
+        await loadBlock(newBlock);
+        block.remove();
+        newBlock.style.display = null;
+        return true;
       }
     } else {
       // sections and default content, may be multiple in the case of richtext
@@ -87,13 +86,9 @@ async function applyChanges(event) {
       }
     }
   }
+
   return false;
-
-
 }
-
-
-
 
 function attachEventListners(main) {
   [
@@ -107,6 +102,7 @@ function attachEventListners(main) {
     const applied = await applyChanges(event);
     if (!applied) window.location.reload();
   }));
+  import('./form-editor-support.js');
 }
 
 attachEventListners(document.querySelector('main'));
