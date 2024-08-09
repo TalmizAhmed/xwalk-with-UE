@@ -27,7 +27,7 @@ export default async function decorate(fieldDiv, field, htmlForm) {
     const newLinks = [];
     tncLinks.forEach((tncLink) => {
         const newLink = decorateTncLink(tncLink);
-        newLinks.append(newLink)
+        newLinks.push(newLink)
     });
     tncLinks.forEach((tncLink) => {
         tncLink.remove();
