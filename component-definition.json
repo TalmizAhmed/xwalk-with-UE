@@ -429,7 +429,6 @@
                   "link": {
                     "jcr:title": "",
                     "enum": ["https://www.google.com/", "https://www.github.com/"],
-                    "type": "string[]",
                     "fd:viewType": "tnc-link",
                     "enabled": true,
                     "visible": true,
