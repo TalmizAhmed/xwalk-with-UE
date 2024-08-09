@@ -1,6 +1,6 @@
-export default async function decorate(fieldDiv, field, htmlForm) {
-    const checkbox = fieldDiv.querySelector('input[type="checkbox"]');
-    const label = fieldDiv.querySelector('label');
+function decorateTncLink(tncLink) {
+    const checkbox = tncLink.querySelector('input[type="checkbox"]');
+    const label = tncLink.querySelector('label');
     const value = checkbox.value;
     const labelText = label.textContent;
     label.textContent = '';
@@ -19,5 +19,12 @@ export default async function decorate(fieldDiv, field, htmlForm) {
     checkbox.remove();
     label.appendChild(newAnchor);
 
-    return fieldDiv;
+    return tncLink;
+}
+
+export default async function decorate(fieldDiv, field, htmlForm) {
+    const tncLinks = fieldDiv.querySelectorAll('.checkbox-wrapper')
+    tncLinks.forEach((tncLink) => {
+        decorateTncLink(tncLink);
+    });
 }
