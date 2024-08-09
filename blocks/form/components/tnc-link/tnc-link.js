@@ -16,8 +16,11 @@ function decorateTncLink(tncLink) {
     checkbox.style.display = 'none';
     newAnchor.appendChild(newSpan);
     label.appendChild(checkbox.cloneNode(true));
-    checkbox.remove();
+    // checkbox.remove();
     label.appendChild(newAnchor);
+    label.addEventListener('click', () => {
+        checkbox.click()
+    })
 
     return tncLink;
 }
@@ -26,14 +29,7 @@ export default async function decorate(fieldDiv, field, htmlForm) {
     const tncLinks = fieldDiv.querySelectorAll('.checkbox-wrapper')
     const newLinks = [];
     tncLinks.forEach((tncLink) => {
-        const newLink = decorateTncLink(tncLink);
-        newLinks.push(newLink)
-    });
-    tncLinks.forEach((tncLink) => {
-        tncLink.remove();
-    });
-    newLinks.forEach((newLink) => {
-        fieldDiv.appendChild(newLink);
+        decorateTncLink(tncLink);
     });
     return fieldDiv;
 }
