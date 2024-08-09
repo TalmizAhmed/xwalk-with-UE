@@ -434,8 +434,8 @@
                     "visible": true,
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
-                      "Click here to view the terms and conditions of the service.",
-                      "Click here to view the terms and conditions of the product."
+                      "Terms and conditions of the service.",
+                      "Terms and conditions of the product."
                     ],
                     "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
                     "fieldType": "checkbox-group",
