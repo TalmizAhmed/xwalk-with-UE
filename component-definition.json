@@ -428,14 +428,14 @@
                   },
                   "link": {
                     "jcr:title": "",
-                    "enum": ["your-link-here", "abc"],
+                    "enum": ["your-link-here", "another-link"],
                     "type": "string[]",
                     "enabled": true,
                     "visible": true,
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
-                      "label for the link",
-                      "pqr"
+                      "Click here to view the terms and conditions of the service.",
+                      "Click here to view the terms and conditions of the product."
                     ],
                     "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
                     "fieldType": "checkbox-group",
