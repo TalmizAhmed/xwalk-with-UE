@@ -430,6 +430,7 @@
                     "jcr:title": "",
                     "enum": ["your-link-here", "another-link"],
                     "type": "string[]",
+                    "fd:viewType": "tnc-link",
                     "enabled": true,
                     "visible": true,
                     "title": "I agree to the terms & conditions",
