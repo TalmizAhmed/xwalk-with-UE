@@ -447,7 +447,7 @@
                     "fd:events": {
                       "jcr:primaryType": "nt:unstructured",
                       "change": [
-                        "if(length($field.$value) == length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
+                        "if(length($field.$value) >= length($field.$enum), dispatchEvent($parent.approvalcheckbox, 'custom:setProperty', {enabled : true()}), {})"
                       ]
                     }
                   },
