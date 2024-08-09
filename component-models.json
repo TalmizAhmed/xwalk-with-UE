@@ -1046,6 +1046,12 @@
                         "name": "readOnly",
                         "label": "Read-only",
                         "valueType": "boolean"
+                    },
+                    {
+                        "component": "boolean",
+                        "name": "showLink",
+                        "label": "Replace consent text with weblink(s)",
+                        "valueType": "boolean"
                     }
                 ]
             },
