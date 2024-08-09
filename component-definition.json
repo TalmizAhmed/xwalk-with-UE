@@ -428,15 +428,14 @@
                   },
                   "link": {
                     "jcr:title": "",
-                    "enum": ["https://www.google.com/", "https://github.com/"],
+                    "enum": ["https://www.google.com/"],
                     "type": "string[]",
                     "fd:viewType": "tnc-link",
                     "enabled": true,
                     "visible": true,
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
-                      "Terms and conditions of the service.",
-                      "Terms and conditions of the product."
+                      "Terms and conditions of the service."
                     ],
                     "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
                     "fieldType": "checkbox-group",
