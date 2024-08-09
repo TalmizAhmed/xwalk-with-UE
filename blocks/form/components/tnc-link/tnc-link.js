@@ -24,7 +24,14 @@ function decorateTncLink(tncLink) {
 
 export default async function decorate(fieldDiv, field, htmlForm) {
     const tncLinks = fieldDiv.querySelectorAll('.checkbox-wrapper')
+    const newLinks = [];
     tncLinks.forEach((tncLink) => {
-        decorateTncLink(tncLink);
+        const newLink = decorateTncLink(tncLink);
+        newLinks.append(newLink)
+        tncLink.remove()
     });
+    newLinks.forEach((newLink) => {
+        fieldDiv.appendChild(newLink);
+    });
+    return fieldDiv;
 }
