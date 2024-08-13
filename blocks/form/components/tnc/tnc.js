@@ -5,7 +5,7 @@ export default async function decorate(fieldDiv, field, htmlForm) {
     console.log(fieldDiv, field, htmlForm);
     const textWrapper = fieldDiv.querySelector('.plain-text-wrapper');
     textWrapper.classList.add(textDecorationClass);
-    const intersection = fieldDiv.createElement('div');
+    const intersection = document.createElement('div');
     intersection.classList.add(textIntersectionClass);
     textWrapper.appendChild(intersection);
     handleScroll(fieldDiv);
