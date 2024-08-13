@@ -4,8 +4,9 @@ const textIntersectionClass = 'tnc__intersection';
 const textDecorationClass = 'tnc__text-decoration'
 
 class TermsAndConditions {
-    constructor(fieldDiv) {
+    constructor(fieldDiv, fieldJson) {
         this.fieldDiv = fieldDiv;
+        this.fieldJson = fieldJson;
         this.formModel = null;
         this.decorate();
     }
@@ -46,7 +47,7 @@ class TermsAndConditions {
     }
 }
 export default async function decorate(tncDiv, field, htmlForm) {
-    const tnc = new TermsAndConditions(tncDiv);
+    const tnc = new TermsAndConditions(tncDiv, fieldJson);
     // subscribe(tncDiv, async (fieldDiv, formModel) => {
     //     tnc.setFormModel(formModel);
     // })
