@@ -1648,7 +1648,7 @@
         ]
     },
     {
-        "id": "tnc-link",
+        "id": "toggleable-link",
         "fields": [
             {
                 "component": "container",
