@@ -424,7 +424,8 @@
                     "jcr:title": "",
                     "value": "Text related to the terms and conditions come here.",
                     "sling:resourceType": "core/fd/components/form/text/v1/text",
-                    "fieldType": "plain-text"
+                    "fieldType": "plain-text",
+                    "textIsRich": true
                   },
                   "link": {
                     "jcr:title": "",

@@ -1155,12 +1155,6 @@
                     },
                     {
                         "component": "boolean",
-                        "name": "showApprovalOption",
-                        "label": "Show approval options",
-                        "valueType": "boolean"
-                    },
-                    {
-                        "component": "boolean",
                         "name": "showLink",
                         "label": "Replace consent text with weblink(s)",
                         "valueType": "boolean"
