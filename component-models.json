@@ -1852,7 +1852,7 @@
                 "required": true
             },
             {
-                "component": "text",
+                "component": "richtext",
                 "name": "value",
                 "label": "Value",
                 "valueType": "string"
