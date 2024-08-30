@@ -52,14 +52,15 @@
       "form-image",
       "form-reset-button",
       "form-submit-button",
+      "modal",
       "number-input",
       "panel",
       "plain-text",
       "radio-group",
       "telephone-input",
       "text-input",
-      "wizard",
-      "tnc"
+      "tnc",
+      "wizard"
     ]
   }
 ]
