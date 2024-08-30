@@ -1,6 +1,6 @@
 import { loadCSS } from '../../scripts/aem.js';
 
-let customComponents = ['toggleable-link', 'tnc'];
+let customComponents = [];
 
 export function setCustomComponents(components) {
   customComponents = components;
