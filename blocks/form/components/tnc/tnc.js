@@ -1,6 +1,6 @@
 import { subscribe } from '../../rules/index.js';
 
-const textIntersectionClass = 'tnc__intersection';
+const textIntersectionClass = 'tnc__text-intersect';
 const textDecorationClass = 'tnc__text-decoration';
 
 class TermsAndConditions {
@@ -29,9 +29,8 @@ class TermsAndConditions {
   }
 
   handleScroll() {
-    const intersection = this.fieldDiv.querySelector(textIntersectionClass);
+    const intersection = this.fieldDiv.querySelector('.' + textIntersectionClass);
     if (intersection) {
-      console.log(intersection);
       const io = new IntersectionObserver(onIntersection, {
           threshold: [1],
       })
