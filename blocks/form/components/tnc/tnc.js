@@ -25,7 +25,7 @@ class TermsAndConditions {
     const intersection = document.createElement('div');
     intersection.classList.add(textIntersectionClass);
     textWrapper.appendChild(intersection);
-    // this.handleScroll();
+    this.handleScroll();
   }
 
   handleScroll() {
@@ -47,8 +47,8 @@ class TermsAndConditions {
 }
 export default async function decorate(tncDiv, fieldJson) {
   const tnc = new TermsAndConditions(tncDiv, fieldJson);
-  // subscribe(tncDiv, async (fieldDiv, formModel) => {
-  //     tnc.setFormModel(formModel);
-  // })
+  subscribe(tncDiv, async (fieldDiv, formModel) => {
+      tnc.setFormModel(formModel);
+  })
   return tnc.getfieldDiv();
 }
