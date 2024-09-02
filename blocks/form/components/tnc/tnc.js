@@ -25,7 +25,7 @@ class TermsAndConditions {
     const intersection = document.createElement('div');
     intersection.classList.add(textIntersectionClass);
     textWrapper.appendChild(intersection);
-    this.handleScroll();
+    // this.handleScroll();
   }
 
   handleScroll() {
