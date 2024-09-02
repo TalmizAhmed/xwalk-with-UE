@@ -489,7 +489,7 @@
                   },
                   "link": {
                     "jcr:title": "",
-                    "enum": ["dummy-link-1", "dummy-link-2"],
+                    "enum": ["https://www.google.com/", "https://www.github.com/"],
                     "type": "string[]",
                     "fd:viewType": "toggleable-link",
                     "enabled": true,
