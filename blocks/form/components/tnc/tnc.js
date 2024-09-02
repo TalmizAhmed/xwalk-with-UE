@@ -1,4 +1,4 @@
-import {subscribe} from "../../rules";
+// import {subscribe} from "../../rules";
 
 const textIntersectionClass = 'tnc__intersection';
 const textDecorationClass = 'tnc__text-decoration';
