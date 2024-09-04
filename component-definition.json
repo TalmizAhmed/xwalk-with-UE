@@ -517,8 +517,7 @@
                     "jcr:title": "I agree to the terms & conditions.",
                     "sling:resourceType": "core/fd/components/form/checkbox/v1/checkbox",
                     "fieldType": "checkbox",
-                    "required": true,
-                    "enabled": false
+                    "required": true
                   }
                 }
               }
