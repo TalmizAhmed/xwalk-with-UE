@@ -36,7 +36,9 @@ class TermsAndConditions {
       })
       function onIntersection ([{isIntersecting}]) {
         if(isIntersecting) {
-          console.log(isIntersecting + ' and is ' + this.formModel);
+          /*
+          * TODO: Enable the checkboxes that are disabled by default via the model. Currently they are enabled by default
+          * */
           io.unobserve(intersection);
         }
       }

@@ -423,15 +423,13 @@
                   "enabled": true,
                   "visible": true,
                   "text": {
-                    "jcr:title": "",
                     "value": "Text related to the terms and conditions come here.",
                     "sling:resourceType": "core/fd/components/form/text/v1/text",
                     "fieldType": "plain-text",
                     "textIsRich": true
                   },
                   "link": {
-                    "jcr:title": "",
-                    "enum": ["https://www.google.com/", "https://www.github.com/"],
+                    "enum": ["dummy-link-1", "dummy-link-2"],
                     "type": "string[]",
                     "fd:viewType": "toggleable-link",
                     "enabled": true,
