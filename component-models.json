@@ -1014,7 +1014,7 @@
                         "component": "text",
                         "name": "default idffname",
                         "label": "Default Options fuasdhguasdfh",
-                        "valueType": "string[]",
+                        "valueType": "string",
                         "multi": true,
                         "condition": {
                             "===": [
