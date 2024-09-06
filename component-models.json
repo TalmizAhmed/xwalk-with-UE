@@ -1399,14 +1399,14 @@
                         "component": "text",
                         "name": "enum",
                         "label": "Options (Data Value)",
-                        "valueType": "string",
+                        "valueType": "string[]",
                         "multi": true
                     },
                     {
                         "component": "text",
                         "name": "enumNames",
                         "label": "Options (Display Value)",
-                        "valueType": "string",
+                        "valueType": "string[]",
                         "multi": true
                     },
                     {
