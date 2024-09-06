@@ -1012,7 +1012,7 @@
                     },
                     {
                         "component": "text",
-                        "name": "default",
+                        "name": "default idffname",
                         "label": "Default Options fuasdhguasdfh",
                         "valueType": "string[]",
                         "multi": true,
