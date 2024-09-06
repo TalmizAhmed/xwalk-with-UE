@@ -1007,7 +1007,8 @@
                         "component": "boolean",
                         "name": "multiSelect",
                         "label": "Allow multiple selection",
-                        "valueType": "boolean"
+                        "valueType": "boolean",
+                        "value": false
                     },
                     {
                         "component": "text",
