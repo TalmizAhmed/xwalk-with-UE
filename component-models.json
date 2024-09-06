@@ -1013,8 +1013,8 @@
                     {
                         "component": "text",
                         "name": "default",
-                        "label": "Default Options",
-                        "valueType": "string",
+                        "label": "Default Options fuasdhguasdfh",
+                        "valueType": "string[]",
                         "multi": true,
                         "condition": {
                             "===": [
