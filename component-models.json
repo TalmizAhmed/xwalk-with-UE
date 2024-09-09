@@ -1013,7 +1013,7 @@
                     {
                         "component": "text",
                         "name": "default",
-                        "label": "Default Options fuasdhguasdfh",
+                        "label": "Default Options",
                         "valueType": "string",
                         "multi": true,
                         "condition": {
