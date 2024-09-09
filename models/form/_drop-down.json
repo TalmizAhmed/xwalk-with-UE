@@ -47,7 +47,6 @@
                             "label": "Default Options",
                             "valueType": "string",
                             "multi": true,
-                            "hidden": true,
                             "condition": {
                                 "==": [
                                     { "var": "multiSelect" },
