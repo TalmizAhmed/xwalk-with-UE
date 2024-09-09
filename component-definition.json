@@ -239,10 +239,12 @@
                   "jcr:title": "Checkbox Group",
                   "fieldType": "checkbox-group",
                   "enum": [
-                    "0"
+                    "0",
+                    "1"
                   ],
                   "enumNames": [
-                    "Item 1"
+                    "Item 1",
+                    "Item 2"
                   ],
                   "enabled": true,
                   "visible": true
@@ -512,7 +514,8 @@
                   },
                   "link": {
                     "enum": [
-                      "dummy-link-1"
+                      "dummy-link-1",
+                      "dummy-link-2"
                     ],
                     "type": "string[]",
                     "fd:viewType": "toggleable-link",
@@ -520,6 +523,7 @@
                     "visible": true,
                     "title": "I agree to the terms & conditions",
                     "enumNames": [
+                      "Terms and conditions of the service.",
                       "Privacy policy."
                     ],
                     "sling:resourceType": "core/fd/components/form/checkboxgroup/v1/checkboxgroup",
