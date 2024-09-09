@@ -35,7 +35,37 @@
                             "...": "./_common.json#/optionfields"
                         },
                         {
-                            "...": "./_common.json#/advancedfields"
+                            "component": "boolean",
+                            "name": "multiSelect",
+                            "label": "Allow multiple selection",
+                            "valueType": "boolean",
+                            "value": false
+                        },
+                        {
+                            "component": "text",
+                            "name": "default",
+                            "label": "Default Options",
+                            "valueType": "string",
+                            "multi": true,
+                            "hidden": true,
+                            "condition": {
+                                "==": [
+                                    { "var": "multiSelect" },
+                                    true
+                                ]
+                            }
+                        },
+                        {
+                            "component": "text",
+                            "name": "default",
+                            "label": "Default Option",
+                            "valueType": "string",
+                            "condition": {
+                                "!=": [
+                                    { "var": "multiSelect" },
+                                    true
+                                ]
+                            }
                         }
                     ]
                 },
