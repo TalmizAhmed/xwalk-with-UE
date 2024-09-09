@@ -220,7 +220,6 @@
                 "template": {
                   "jcr:title": "Checkbox",
                   "fieldType": "checkbox",
-                  "checkedValue": "on",
                   "enabled": true,
                   "visible": true
                 }

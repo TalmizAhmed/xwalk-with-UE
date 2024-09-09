@@ -17,6 +17,6 @@ module.exports = {
     'import/extensions': ['error', {
       js: 'always',
     }],
-    'no-console': 'on',
+    'import/no-extraneous-dependencies': ['error', {'devDependencies': ['test/**/**.js', '**/*.config.js']}]
   },
 };
