@@ -239,12 +239,10 @@
                   "jcr:title": "Checkbox Group",
                   "fieldType": "checkbox-group",
                   "enum": [
-                    "0",
-                    "1"
+                    "0"
                   ],
                   "enumNames": [
-                    "Item 1",
-                    "Item 2"
+                    "Item 1"
                   ],
                   "enabled": true,
                   "visible": true
