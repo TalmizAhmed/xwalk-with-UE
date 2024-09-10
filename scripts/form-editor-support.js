@@ -290,8 +290,8 @@ export async function applyChanges(event) {
           }
           const parent = element.closest('.panel-wrapper') || element.closest('form') || element.querySelector('form');
           const parentDef = getFieldById(formDef, parent.dataset.id, {});
-          if (parent.classList?.contains('panel-wrapper') && parent.querySelector('legend')) {
-            const panelLabel = parent.querySelector('legend');
+          if (parent.classList?.contains('panel-wrapper') && parent.querySelector(`legend[for=${parent.dataset.id}]`)) {
+            const panelLabel = parent.querySelector(`legend[for=${parent.dataset.id}]`);
             parent.replaceChildren(panelLabel);
           } else {
             parent.replaceChildren();
@@ -341,9 +341,8 @@ function attachEventListners(main) {
 
   if (document.documentElement.classList.contains('adobe-ue-edit')) {
     ueEditModeHandler();
-  } else {
-    document.body.addEventListener('aue:ui-edit', ueEditModeHandler);
   }
+  document.body.addEventListener('aue:ui-edit', ueEditModeHandler);
 }
 const observer = new MutationObserver(instrumentForms);
 observer.observe(document, { childList: true, subtree: true, attributeFilter: ['form'] });
