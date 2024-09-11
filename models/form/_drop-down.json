@@ -33,6 +33,9 @@
                         },
                         {
                             "...": "./_common.json#/optionfields"
+                        },
+                        {
+                            "...": "./_common.json#/advancedfields"
                         }
                     ]
                 },

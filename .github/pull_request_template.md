@@ -3,5 +3,5 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 Fix #<gh-issue-id>
 
 Test URLs:
-- Before: https://main--ue-repo--TalmizAhmed.hlx.live/
-- After: https://{branch}--ue-repo--TalmizAhmed.hlx.live/
+- Before: https://main--ue--TalmizAhmed.hlx.live/
+- After: https://{branch}--ue--TalmizAhmed.hlx.live/
