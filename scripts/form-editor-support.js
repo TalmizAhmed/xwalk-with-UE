@@ -22,7 +22,7 @@ import { loadCSS } from './aem.js';
 
 window.currentMode = 'preview';
 let activeWizardStep;
-const OOTBViewTypeComponentsWithoutModel = ['wizard', 'tnc'];
+const OOTBViewTypeComponentsWithoutModel = ['wizard', 'toggleable-link'];
 
 export function getItems(container) {
   if (container[':itemsOrder'] && container[':items']) {
