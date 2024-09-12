@@ -10,8 +10,7 @@
                         "template": {
                             "jcr:title": "Checkbox",
                             "fieldType": "checkbox",
-                            "visible": true,
-                            "checkedValue": "on"
+                            "visible": true
                         }
                     }
                 }
