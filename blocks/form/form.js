@@ -242,8 +242,7 @@ const fieldRenderers = {
   'radio-group': createRadioOrCheckboxGroup,
   'checkbox-group': createRadioOrCheckboxGroup,
   image: createImage,
-  heading: createHeading,
-  tel: createI
+  heading: createHeading
 };
 
 function colSpanDecorator(field, element) {
