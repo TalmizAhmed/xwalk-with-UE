@@ -15,7 +15,7 @@
 // the function will also add a mouseover event listener to the star element
 // when a star element is hovered, a css hover class will be added to the star
 // elements till the index of the hovered star element
-export default function rating(fieldDiv) {
+export default function decorate(fieldDiv) {
   // get the input element from the fieldDiv
   const input = fieldDiv.querySelector('input[type="number"]');
   // get the max attribute from the input element
