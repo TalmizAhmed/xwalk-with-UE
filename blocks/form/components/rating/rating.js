@@ -19,7 +19,10 @@ export default function decorate(fieldDiv) {
   // get the input element from the fieldDiv
   const input = fieldDiv.querySelector('input[type="number"]');
   // get the max attribute from the input element
-  const max = input.getAttribute('max');
+  let max = input.getAttribute('max');
+  if (!max) {
+    max = 5;
+  }
   // create a div element to contain the rating component
   const ratingDiv = document.createElement('div');
   // add the rating class to the rating div
