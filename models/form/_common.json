@@ -7,7 +7,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
-                "valueFormat": "regExp",
+                "valueFormat": "regexp",
                 "regExp": "^[^$].*",
                 "customErrorMsg": "Name cannot start with $"
             }
