@@ -451,6 +451,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -605,6 +606,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -777,6 +779,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -975,6 +978,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1117,6 +1121,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1287,6 +1292,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1428,6 +1434,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1587,6 +1594,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1675,6 +1683,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1867,6 +1876,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -1983,6 +1993,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -2155,6 +2166,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -2325,6 +2337,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -2438,6 +2451,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -2614,6 +2628,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
@@ -2790,6 +2805,7 @@
             "valueType": "string",
             "required": true,
             "validation": {
+              "valueFormat": "regExp",
               "regExp": "^[^$].*",
               "customErrorMsg": "Name cannot start with $"
             }
