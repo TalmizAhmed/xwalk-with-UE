@@ -6,7 +6,6 @@
             "label": "Name",
             "valueType": "string",
             "required": true,
-            "valueFormat": "regexp",
             "validation": {
                 "regExp": "^[^$].*",
                 "customErrorMsg": "Name cannot start with $"
