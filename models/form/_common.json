@@ -78,11 +78,7 @@
             "label": "Options (Data Value)",
             "valueType": "string",
             "multi": true,
-            "valueFormat": "regexp",
-            "validation": {
-                "regExp": "/^(?!\\s*$).+/",
-                "customErrorMsg": "Data value cannot be empty or contain spaces."
-            }
+            "required": true
         },
         {
             "component": "text",
