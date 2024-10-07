@@ -663,7 +663,7 @@
             "multi": true,
             "valueFormat": "regexp",
             "validation": {
-              "regExp": "/^$|\\s+/g",
+              "regExp": "/(?!^$)([^\\s])/",
               "customErrorMsg": "Data value cannot be empty or contain spaces."
             }
           },
@@ -1040,7 +1040,7 @@
             "multi": true,
             "valueFormat": "regexp",
             "validation": {
-              "regExp": "/^$|\\s+/g",
+              "regExp": "/(?!^$)([^\\s])/",
               "customErrorMsg": "Data value cannot be empty or contain spaces."
             }
           },
@@ -2060,7 +2060,7 @@
             "multi": true,
             "valueFormat": "regexp",
             "validation": {
-              "regExp": "/^$|\\s+/g",
+              "regExp": "/(?!^$)([^\\s])/",
               "customErrorMsg": "Data value cannot be empty or contain spaces."
             }
           },
