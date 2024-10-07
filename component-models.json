@@ -660,7 +660,12 @@
             "name": "enum",
             "label": "Options (Data Value)",
             "valueType": "string",
-            "multi": true
+            "multi": true,
+            "valueFormat": "regexp",
+            "validation": {
+              "regExp": "/^$|\\s+/g",
+              "customErrorMsg": "Data value cannot be empty or contain spaces."
+            }
           },
           {
             "component": "text",
@@ -1032,7 +1037,12 @@
             "name": "enum",
             "label": "Options (Data Value)",
             "valueType": "string",
-            "multi": true
+            "multi": true,
+            "valueFormat": "regexp",
+            "validation": {
+              "regExp": "/^$|\\s+/g",
+              "customErrorMsg": "Data value cannot be empty or contain spaces."
+            }
           },
           {
             "component": "text",
@@ -2047,7 +2057,12 @@
             "name": "enum",
             "label": "Options (Data Value)",
             "valueType": "string",
-            "multi": true
+            "multi": true,
+            "valueFormat": "regexp",
+            "validation": {
+              "regExp": "/^$|\\s+/g",
+              "customErrorMsg": "Data value cannot be empty or contain spaces."
+            }
           },
           {
             "component": "text",
