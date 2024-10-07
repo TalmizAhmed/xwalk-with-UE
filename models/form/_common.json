@@ -80,7 +80,7 @@
             "multi": true,
             "valueFormat": "regexp",
             "validation": {
-                "regExp": "^.+",
+                "regExp": "^(?!\\\\s*$).+",
                 "customErrorMsg": "Data value cannot be empty or contain spaces."
             }
         },
