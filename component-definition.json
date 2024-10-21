@@ -503,7 +503,8 @@
                   "jcr:title": "Telephone Input",
                   "fieldType": "tel",
                   "enabled": true,
-                  "visible": true
+                  "visible": true,
+                  "pattern": "^[+][0-9]{0,14}$"
                 }
               }
             }
