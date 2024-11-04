@@ -350,7 +350,8 @@ function enableExtension() {
   const head = document.getElementsByTagName('head')[0];
   const meta = document.createElement('meta');
   meta.name = 'urn:adobe:aue:config:extensions';
-  meta.content = 'https://283250-684greenantelope-stage.adobeio-static.net';
+  meta.content = 'https://development-16714-testprojecttalmiz-stage.adobeio-static.net';
+  // meta.content = 'https://283250-684greenantelope-stage.adobeio-static.net';
   head.appendChild(meta);
 }
 
